@@ -1,3 +1,4 @@
+import menuDishesTpl from '../src/templates/menu-dishes.hbs';
 import './sass/main.scss';
 // === Switching of themes ===
 // 1. Get the links
