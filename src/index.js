@@ -21,18 +21,36 @@ const iconTheme = document.querySelector('#theme-switch-toggle');
 // console.log(iconTheme);
 
 const bodyClass = document.querySelector('body');
-// console.log(bodyClass.classList);
+console.log(bodyClass.classList);
+
+// ==localStorage==
+// const currentTheme = localStorage.getItem('theme');
+// console.log(currentTheme);
+
+// bodyClass.classList.add(currentTheme);
+
+// == listener ==
 
 iconTheme.addEventListener('change', onClickIconTheme);
 
 function onClickIconTheme(evt) {
-  // console.log('Слушатель работает');
-
   if (bodyClass.classList.contains('light-theme')) {
     bodyClass.classList.remove('light-theme');
     bodyClass.classList.add('dark-theme');
+    localStorage.setItem('theme', 'dark-theme');
   } else {
     bodyClass.classList.remove('dark-theme');
     bodyClass.classList.add('light-theme');
+    localStorage.setItem('theme', 'light-theme');
   }
+
+  // if (currentTheme === 'light-theme') {
+  //   bodyClass.classList.remove('light-theme');
+  //   bodyClass.classList.add('dark-theme');
+  //   localStorage.setItem('theme', 'dark-theme');
+  // } else {
+  //   bodyClass.classList.remove('dark-theme');
+  //   bodyClass.classList.add('light-theme');
+  //   localStorage.setItem('theme', 'light-theme');
+  // }
 }
